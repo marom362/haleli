@@ -16,14 +16,9 @@ public class Ray
 
 
     public Ray(Point3D p, Vector vector) {
-        if(!Util.isZero(vector.length()-1))
-        {
-            System.out.println(vector.length());
-            throw new IllegalArgumentException("the vector is not normalize");
-        }
 
         this.p = new Point3D(p);
-        this.vector = new Vector(vector);
+        this.vector = new Vector(vector).normalize();
     }
 
     public Point3D getP() {
